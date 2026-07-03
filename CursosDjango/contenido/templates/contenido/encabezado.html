@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+<title>{% block titulo %} {% endblock %}</title>
+
+{% load static %}
+
+<link href="{% static 'contenido/css/styles.css' %}" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+    <!-- ===== NAVBAR SUPERIOR ===== -->
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <img src="{% block imagen %}{% endblock %}" alt="Logo">
+            <span>{% block nombre_seccion %}Principal{% endblock %}</span>
+        </div>
+
+        <ul class="navbar-links">
+            <li><a href="{% url 'Principal' %}">Cursos Django</a></li>
+            <li><a href="{% url 'Prueba' %}">Nombre</a></li>
+            <li><a href="{% url 'Contacto' %}">Contacto</a></li>
+            <li><a href="{% url 'Formulario' %}">Formulario</a></li>
+        </ul>
+    </nav>
+    <!-- ===== FIN NAVBAR ===== -->
+
+    <!-- ===== CONTENEDOR PRINCIPAL ===== -->
+    <div class="main-wrapper">
+
+        <!-- Encabezado de página -->
+        <header class="page-header">
+            {% block encabezado_pagina %}
+            {% endblock %}
+        </header>
+
+        <!-- Breadcrumb -->
+        <div class="breadcrumb-line">
+            <ul class="breadcrumb">
+                <li><a href="{% url 'Principal' %}">Cursos Django</a></li>
+                <li class="active">{% block breadcrumb %}{% endblock %}</li>
+            </ul>
+        </div>
+
+        <!-- Contenido de cada página -->
+        <main class="page-content">
+            {% block contenido %}
+            {% endblock %}
+        </main>
+
+    </div>
+    <!-- ===== FIN CONTENEDOR ===== -->
+
+</body>
+</html>

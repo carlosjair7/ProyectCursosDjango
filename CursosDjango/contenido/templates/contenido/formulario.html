@@ -1,0 +1,89 @@
+{% extends "contenido/encabezado.html" %}
+{% load static %}
+{% block imagen %}{% static 'contenido/images/formulario.png' %}{% endblock %}
+{% block titulo %} FORMULARIO {% endblock %}
+{% block nombre_seccion %}Formulario{% endblock %}
+{% block breadcrumb %}Formulario{% endblock %}
+
+
+{% block encabezado_pagina %}
+<!--Encabezado -->
+<div class="page-title">
+    <h3>Inscripción a curso</h3>
+</div>
+<!-- /Encabezado-->
+{% endblock %}
+
+{% block contenido %}
+
+<!-- Formulario -->
+<form class="formulario-card" action="#" method="post">
+
+    <div class="form-section-title">Datos del alumno</div>
+
+    <div class="form-row">
+        <div class="form-group">
+            <label class="form-label">Matrícula</label>
+            <input type="text" class="form-control" placeholder="Ej. UTM1234TIC">
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Nombre completo</label>
+            <input type="text" class="form-control" placeholder="Nombre del alumno">
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group">
+            <label class="form-label">Correo electrónico</label>
+            <input type="email" class="form-control" placeholder="correo@ejemplo.com">
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Carrera</label>
+            <select class="form-control">
+                <option value="">Elige una carrera...</option>
+                <option value="TIC">TIC</option>
+                <option value="BIO">BIO</option>
+                <option value="MAI">MAI</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-divider"></div>
+
+    <div class="form-section-title">Datos del curso</div>
+
+    <div class="form-row">
+        <div class="form-group">
+            <label class="form-label">Curso a inscribir</label>
+            <select class="form-control">
+                <option value="">Selecciona un curso...</option>
+                <option value="django-basico">Django Básico</option>
+                <option value="django-orm">Django ORM y Modelos</option>
+                <option value="django-admin">Panel de Administración</option>
+                <option value="django-templates">Templates y Herencia</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label">Turno</label>
+            <div class="form-radio-group">
+                <label class="form-radio">
+                    <input type="radio" name="turno" checked> Matutino
+                </label>
+                <label class="form-radio">
+                    <input type="radio" name="turno"> Vespertino
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-actions">
+        <input type="submit" value="Inscribirme" class="btn">
+    </div>
+
+</form>
+<!-- Fin del Formulario -->
+
+{% endblock %}
